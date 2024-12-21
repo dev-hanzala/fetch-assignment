@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,6 +28,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="bg-gray-800 text-white py-4 px-6">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <Link href="/">
+              <h1 className="text-2xl font-bold">Fetch Assignment</h1>
+            </Link>
+          </div>
+        </header>
         {children}
       </body>
     </html>
